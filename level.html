@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKT48 Random Game</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="level.css"> <!-- External CSS -->
+</head>
+<body>
+    <div id="game-container">
+        <div id="level-text">Level 1</div> <!-- Text for current level -->
+        <a href="javascript:history.back()" id="back-button">
+            <h2 >BACK</h2>
+        </a>
+        
+        <!-- Selected member PNG -->
+        <img id="player" src="" alt="Selected Member" style="position: absolute; left: 0; bottom: 10px;">
+
+        <!-- Enemy PNGs -->
+        <img class="enemy" id="enemy1" src="img/wotabul.png" alt="Enemy 1">
+        <img class="enemy" id="enemy2" src="img/wotamap.png" alt="Enemy 2">
+        <img class="enemy hidden" id="enemy3" src="img/wotazombie.png" alt="Enemy 3">   
+
+    </div>
+
+    <script src="level.js"></script> <!-- External JS -->
+</body>
+</html>

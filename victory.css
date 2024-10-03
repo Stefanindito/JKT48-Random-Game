@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Sky blue background */
+    overflow: hidden;
+    cursor: url('img/cursor.png'), auto; 
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('img/victory1.jpg') no-repeat center center;
+    background-color: #f0f8ff;
+    background-size: cover;
+}
+
+#you-won {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+}
+
+#members-container {
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    top: 20%;
+}
+
+#player {
+    position: absolute;
+    width: 80px;
+    transition: left 2s ease-in-out, top 2s ease-in-out; /* Perbaiki transisi agar berlaku untuk posisi */
+    animation: jump 1s infinite;
+}
+.other-member {
+    position: absolute;
+    width: 80px;
+    transition: left 2s ease-in-out, top 2s ease-in-out; /* Perbaiki transisi agar berlaku untuk posisi */
+    animation: jump 1s infinite;
+}
+
+/* Jumping animation */
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Move to center CSS for player */
+.move-to-center {
+    transition: left 2s ease-in-out, top 2s ease-in-out; /* Pastikan posisi diubah dengan transisi */
+}
+
+/* Move toward center with slight separation for other members */
+.move-toward-center {
+    transition: left 2s ease-in-out, top 2s ease-in-out; /* Ubah posisi dengan transisi */
+}
+
+#play-again {
+     position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
+    background: none;
+
+}
+#play-again:hover{
+    cursor: url('img/cursor1.png'), auto;
+}
