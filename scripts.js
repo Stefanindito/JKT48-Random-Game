@@ -9,10 +9,11 @@ const filePaths = [
     'img/cursor.png',
     'img/bg.jpg',
     'img/bg.png',
-    'img/wotazombie.png'
-    'img/wotamap.png'
-    'img/wotabul.png'
+    'img/wotazombie.png',
+    'img/wotamap.png',
+    'img/wotabul.png',
     'img/choose.png',
+    'img/victory1.jpg',
     'img/abigail-rachel/large.png',
     'img/adeline-wijaya/large.png',
     'img/alya-amanda/large.png',
