@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level</title>
+    <link rel="stylesheet" href="level.css"> <!-- External CSS -->
+</head>
+<body>
+    <button id="back-button" onclick="goBack()">Back</button>
+    <div id="level-indicator">Level 1</div>
+    
+    <div id="game-container">
+        <!-- Selected member PNG -->
+        <img id="player" src="" alt="Selected Member" style="position: absolute; left: 0; bottom: 10px;">
+        
+        <!-- Enemy PNGs -->
+        <img class="enemy" id="enemy1" src="img/enemy1.png" alt="Enemy 1">
+        <img class="enemy" id="enemy2" src="img/enemy2.png" alt="Enemy 2">
+    </div>
+
+    <script src="level.js"></script> <!-- External JS -->
+</body>
+</html>

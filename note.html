@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="New-Folder/img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note - JKT48 Random Game</title>
+</head>
+<body>
+
+    <style>
+        @font-face {
+            font-family: 'MyCustomFont'; /* Nama font yang akan digunakan */
+            src: url('font/Fontspring-DEMO-integralcf-demibold.otf') format('opentype'); /* Path ke file OTF */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('img/bg.png'); /* Ganti dengan path gambar latar belakangmu */
+            background-size: cover; /* Make sure the background covers the entire page */
+            background-position: center; /* Center the background */
+            background-repeat: no-repeat; /* Prevent the background from repeating */
+            overflow: hidden; 
+            cursor: url('img/cursor.png'), auto;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Warna hitam transparan */
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        
+        .catatan h2{
+            color: white;
+            font-family: 'MyCustomFont', sans-serif;
+        }
+        .catatan {
+            color: white;
+        }
+        
+        .back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            font-family: 'MyCustomFont', sans-serif;
+        }
+
+        .back:hover {
+            color: #9e9e9e;
+            cursor: url('img/cursor1.png'), auto;
+        }
+        
+    </style>
+
+    <div class="container">
+        <div class="catatan">
+            <h2>NOTE</h2>
+            <p>1. Memilih Member: Gunakan tombol panah untuk memilih member, lalu tekan Enter. Klik tombol Play dengan mouse.</p>
+            <p>2. Menggerakkan Member: Gerakkan member dengan tombol panah di keyboard.</p>
+            <p>3. Menyesuaikan Tampilan: Jika objek terlihat aneh, tekan Ctrl + scroll mouse untuk menyesuaikan posisi.</p>
+            <p>4. Mohon maaf kalau game nya cuman "gitu aja" 🙏😅.</p>
+        </div>
+    </div>
+    <a href="javascript:history.back()" class="back-button">
+        <h2 class="back">BACK</h2>
+    </a>
+</body>
+</html>
