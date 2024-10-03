@@ -142,7 +142,7 @@ playButton.addEventListener('click', function() {
         localStorage.setItem('selectedMember', selectedMemberData);
         
         // Redirect to level.html
-        window.location.href = 'New-Folder/level.html';
+        window.location.href = 'New-Folder/index.html';
     }
 });
 
