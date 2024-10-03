@@ -67,6 +67,7 @@ const filePaths = [
     'img/victoria-kimberly/large.png',
     'sounds/bgchoose.mp3',
     'sounds/victory.mp3',
+    'victory.mp3'
     'sounds/selected.mp3',
     'sounds/choose.mp3',
 ];
