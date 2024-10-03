@@ -78,15 +78,7 @@ setTimeout(() => {
         playerImg.style.left = `${Math.random() * 20 + 40}vw`; // Posisi acak dengan sedikit ruang
         playerImg.style.top = `${Math.random() * 20 + 30}vh`; // Posisi acak dengan sedikit ruang
 
-        // Musik kemenangan diputar setelah semua member berada di tengah
-        setTimeout(() => {
-            const victoryMusic = new Audio('victory.mp3');
-            victoryMusic.loop = true; // Ulangi musik jika diperlukan
-            victoryMusic.play().catch(error => {
-                console.log('Autoplay was prevented by the browser:', error);
-            });
-        }, 10); // Delay untuk memberikan waktu animasi berjalan
-
+        
     }, 2000); // Delay sebelum member pemain bergerak
 }, 1000); // Delay sebelum member lain bergerak
 
