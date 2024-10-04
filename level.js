@@ -3,6 +3,7 @@ const enemies = document.querySelectorAll(".enemy");
 let isJumping = false;
 let isMovingRight = false;
 let isMovingLeft = false;
+let isFlying = false;
 let playerBottom = 20; // Initial vertical position
 let currentLevel = 1; // Starting level
 let enemySpeed = [3, 4]; // Speed for enemies in level 1
@@ -39,7 +40,6 @@ function movePlayer() {
     }
 }
 
-// Fungsi untuk melompat
 function jump() {
     if (!isJumping) {
         isJumping = true;
@@ -58,6 +58,36 @@ function jump() {
                 }, 20);
             }
         }, 20);
+    }
+}
+
+
+// Fungsi khusus untuk Cathleen Nixie yang bisa terbang
+function moveCathleenNixie() {
+    if (isMovingRight) {
+        let playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
+        player.style.left = (playerLeft + 7) + "px";
+    }
+    if (isMovingLeft) {
+        let playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
+        if (playerLeft > 0) {
+            player.style.left = (playerLeft - 7) + "px";
+        }
+    }
+
+    // Jika tombol ArrowUp ditekan terus menerus, Cathleen Nixie akan terbang
+    if (isFlying) {
+        playerBottom += 5; // Tinggi terbang
+        player.style.bottom = playerBottom + "px";
+    } else {
+        playerBottom -= 5; // Turun saat tombol dilepas
+        if (playerBottom < 20) playerBottom = 20; // Batas bawah
+        player.style.bottom = playerBottom + "px";
+    }
+
+    // Cek apakah pemain sudah sampai di ujung layar untuk lanjut level
+    if (parseInt(player.style.left) >= window.innerWidth - player.offsetWidth) {
+        nextLevel(); // Panggil fungsi untuk lanjut ke level berikutnya
     }
 }
 
@@ -99,7 +129,6 @@ function checkCollision() {
 }
 
 // Fungsi untuk ke level berikutnya
-// Fungsi untuk ke level berikutnya
 function nextLevel() {
     currentLevel += 1;
     if (currentLevel > 2) {
@@ -116,14 +145,11 @@ function nextLevel() {
         if (currentLevel === 2) {
             const enemy3 = document.getElementById('enemy3');
             enemy3.classList.remove('hidden'); // Tampilkan musuh 3
-            console.log("Enemy 3 dimunculkan di level 2"); // Log untuk debugging
             enemySpeed = [4.5, 5, 6]; // Kecepatan musuh untuk level 2
 
             // Ganti PNG wotamap dan wotabul menjadi wotazombie
             document.getElementById("enemy1").src = "img/wotazombie.png"; // Ganti wotabul
             document.getElementById("enemy2").src = "img/wotazombie.png"; // Ganti wotamap
-
-            console.log("Enemy 1 dan Enemy 2 diganti menjadi wotazombie");
         }
 
         // Reset posisi musuh
@@ -132,7 +158,6 @@ function nextLevel() {
         });
     }
 }
-
 
 // Fungsi untuk tombol "Back"
 function goBack() {
@@ -145,9 +170,14 @@ function restartGame() {
 }
 
 // Kontrol gerakan pemain
+// Kontrol gerakan pemain
 document.addEventListener("keydown", event => {
-    if (event.code === "ArrowUp" && !isJumping) {
-        jump();
+    if (event.code === "ArrowUp") {
+        if (selectedMember === "Cathleen Nixie") {
+            isFlying = true; // Cathleen Nixie terbang
+        } else if (!isJumping) {
+            jump(); // Member lain lompat
+        }
     }
     if (event.code === "ArrowRight") {
         isMovingRight = true;
@@ -158,6 +188,9 @@ document.addEventListener("keydown", event => {
 });
 
 document.addEventListener("keyup", event => {
+    if (event.code === "ArrowUp" && selectedMember === "Cathleen Nixie") {
+        isFlying = false; // Cathleen Nixie berhenti terbang
+    }
     if (event.code === "ArrowRight") {
         isMovingRight = false;
     }
@@ -166,9 +199,14 @@ document.addEventListener("keyup", event => {
     }
 });
 
+
 // Panggil fungsi untuk memeriksa tabrakan dan gerakan
+if (selectedMember === "Cathleen Nixie") {
+    setInterval(moveCathleenNixie, 20); // Hanya Cathleen Nixie yang bisa terbang
+} else {
+    setInterval(movePlayer, 20); // Semua member selain Cathleen Nixie menggunakan gerakan normal
+}
 setInterval(checkCollision, 20);
-setInterval(movePlayer, 20);
 setInterval(moveEnemy, 20);
 
 // Event listener untuk tombol "Back"
