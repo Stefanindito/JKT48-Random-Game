@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'MyCustomFont'; /* Nama font yang akan digunakan */
-    src: url('font/Fontspring-DEMO-integralcf-demibold.otf') format('opentype'); /* Path ke file OTF */
+    font-family: 'MyCustomFont'; 
+    src: url('font/Fontspring-DEMO-integralcf-demibold.otf') format('opentype'); 
 }
 
 * {
@@ -12,7 +12,7 @@
 
 body {
     font-family: 'MyCustomFont', sans-serif;
-    background-color: #87CEEB; /* Sky blue background */
+    background-color: #87CEEB; 
     overflow: hidden;
     font-family: 'MyCustomFont', sans-serif;
     cursor: url('img/cursor.png'), auto; 
@@ -22,33 +22,33 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url('img/FX.webp') no-repeat center center; /* Background image for level 1 */
-    background-size: cover; /* Make sure the image covers the entire container */
-    border-bottom: 20px solid #00a113; /* Ground brown */
+    background: url('img/FX.webp') no-repeat center center; 
+    background-size: cover; 
+    border-bottom: 20px solid #00a113; 
 }
 
 #player {
     position: absolute;
-    bottom: 25px; /* Atur sesuai tinggi ground */
-    left: 10px; /* Mulai dari kiri */
+    bottom: 25px;
+    left: 10px; 
     width: 140px;
     transform: translateY(20px);
 }
 
 .enemy {
     position: absolute;
-    bottom: 20px; /* Enemies walk on the ground */
-    right: 0px; /* Start from the right */
+    bottom: 20px;
+    right: 0px; 
     width: 80px;
     transform: translateY(20px);
 }
 
 #enemy2 {
-    animation-duration: 3s; /* Different speed for enemy 2 */
+    animation-duration: 3s; 
 }
 
 #enemy3 {
-    z-index: 5; /* Pastikan musuh berada di atas elemen lain */
+    z-index: 5; 
     width: 80px;
 }
 
@@ -76,18 +76,18 @@ body {
 
 #level-text {
     position: absolute;
-    top: 20px; /* Dekat dengan bagian atas layar */
+    top: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Untuk benar-benar memusatkan teks secara horizontal */
+    transform: translateX(-50%); 
     font-size: 36px;
     color: white;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan agar lebih terlihat */
-    z-index: 10; /* Agar tetap di atas elemen lain */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 10;
     font-family: 'MyCustomFont', sans-serif;
 }
 
-/* Class for hiding elements */
+
 .hidden {
     display: none;
 }
